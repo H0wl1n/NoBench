@@ -1,0 +1,235 @@
+:root {
+  --tf-bg: #0d0f14;
+  --tf-surface: #161b27;
+  --tf-surface2: #1e2535;
+  --tf-border: #2a3347;
+  --tf-accent: #6c63ff;
+  --tf-accent2: #00d4aa;
+  --tf-text: #e8eaf0;
+  --tf-muted: #7a849a;
+  --tf-danger: #ff4d6d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--tf-bg);
+  color: var(--tf-text);
+  min-height: 100vh;
+}
+
+/* ── Navbar ── */
+.tf-navbar {
+  background: rgba(13,15,20,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--tf-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 0;
+}
+.tf-logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--tf-accent), var(--tf-accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.tf-nav-link {
+  color: var(--tf-muted) !important;
+  font-weight: 500;
+  transition: color .2s;
+  text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+}
+.tf-nav-link:hover, .tf-nav-link.active { color: var(--tf-text) !important; background: var(--tf-surface2); }
+
+/* ── Buttons ── */
+.btn-tf {
+  background: linear-gradient(135deg, var(--tf-accent), #8b5cf6);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.55rem 1.4rem;
+  transition: opacity .2s, transform .15s;
+}
+.btn-tf:hover { opacity: .88; transform: translateY(-1px); color: #fff; }
+.btn-tf-outline {
+  background: transparent;
+  border: 1.5px solid var(--tf-accent);
+  color: var(--tf-accent);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.5rem 1.3rem;
+  transition: all .2s;
+}
+.btn-tf-outline:hover { background: var(--tf-accent); color: #fff; }
+
+/* ── Cards ── */
+.tf-card {
+  background: var(--tf-surface);
+  border: 1px solid var(--tf-border);
+  border-radius: 16px;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+.tf-card:hover {
+  border-color: var(--tf-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(108,99,255,.15);
+}
+
+/* ── Badges ── */
+.tf-badge {
+  font-size: .72rem;
+  font-weight: 600;
+  padding: .3em .75em;
+  border-radius: 20px;
+  letter-spacing: .02em;
+}
+.tf-badge-game { background: rgba(108,99,255,.18); color: #a99cff; border: 1px solid rgba(108,99,255,.3); }
+.tf-badge-rank { background: rgba(0,212,170,.15); color: #00d4aa; border: 1px solid rgba(0,212,170,.25); }
+.tf-badge-role { background: rgba(255,165,0,.15); color: #ffa500; border: 1px solid rgba(255,165,0,.25); }
+
+/* ── Form controls ── */
+.tf-input {
+  background: var(--tf-surface2) !important;
+  border: 1.5px solid var(--tf-border) !important;
+  color: var(--tf-text) !important;
+  border-radius: 10px !important;
+  font-size: .95rem;
+  transition: border-color .2s;
+}
+.tf-input:focus {
+  border-color: var(--tf-accent) !important;
+  box-shadow: 0 0 0 3px rgba(108,99,255,.15) !important;
+  outline: none !important;
+}
+.tf-input::placeholder { color: var(--tf-muted) !important; }
+.tf-input option { background: var(--tf-surface2); }
+.tf-label {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--tf-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .4rem;
+  display: block;
+}
+
+/* ── Hero ── */
+.tf-hero {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(108,99,255,.22) 0%, transparent 70%),
+              var(--tf-bg);
+  padding: 5rem 0 4rem;
+  text-align: center;
+}
+.tf-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 30%, var(--tf-accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+.tf-hero p { color: var(--tf-muted); font-size: 1.1rem; max-width: 560px; margin: 1rem auto 0; }
+
+/* ── Game chip ── */
+.game-chip {
+  background: var(--tf-surface2);
+  border: 1.5px solid var(--tf-border);
+  border-radius: 12px;
+  padding: .7rem 1.1rem;
+  cursor: pointer;
+  transition: all .2s;
+  font-weight: 600;
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--tf-text);
+  text-decoration: none;
+}
+.game-chip:hover, .game-chip.active {
+  border-color: var(--tf-accent);
+  background: rgba(108,99,255,.12);
+  color: #a99cff;
+}
+
+/* ── Avatar ── */
+.tf-avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.tf-avatar-lg { width: 72px; height: 72px; font-size: 1.6rem; }
+
+/* ── Like btn ── */
+.like-btn {
+  background: transparent;
+  border: 1.5px solid var(--tf-border);
+  color: var(--tf-muted);
+  border-radius: 8px;
+  padding: .35rem .8rem;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: all .2s;
+  display: flex; align-items: center; gap: .4rem;
+}
+.like-btn:hover, .like-btn.liked {
+  border-color: var(--tf-danger);
+  color: var(--tf-danger);
+  background: rgba(255,77,109,.08);
+}
+
+/* ── Section titles ── */
+.tf-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--tf-text);
+}
+.tf-section-sub { font-size: .9rem; color: var(--tf-muted); }
+
+/* ── Divider ── */
+.tf-divider { border-color: var(--tf-border) !important; }
+
+/* ── Alert ── */
+.tf-alert {
+  background: var(--tf-surface2);
+  border: 1px solid var(--tf-border);
+  border-radius: 12px;
+  color: var(--tf-muted);
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ── Modal ── */
+.tf-modal .modal-content {
+  background: var(--tf-surface);
+  border: 1px solid var(--tf-border);
+  border-radius: 20px;
+  color: var(--tf-text);
+}
+.tf-modal .modal-header { border-bottom: 1px solid var(--tf-border); }
+.tf-modal .modal-footer { border-top: 1px solid var(--tf-border); }
+.tf-modal .btn-close { filter: invert(1) brightness(.6); }
+
+/* ── Footer ── */
+.tf-footer {
+  border-top: 1px solid var(--tf-border);
+  padding: 2rem 0;
+  color: var(--tf-muted);
+  font-size: .85rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--tf-bg); }
+::-webkit-scrollbar-thumb { background: var(--tf-border); border-radius: 3px; }
