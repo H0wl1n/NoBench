@@ -1,7 +1,7 @@
 1. Установить Node.js (LTS) с nodejs.org, если ещё не установлен.
 
 2. Клонировать репозиторий:
-   git clone https://github.com/твой_username/teamfinder.git
+   git clone https://github.com/H0wl1n/teamfinder.git
    cd teamfinder
 
 3. Установить и запустить backend:
